@@ -1,13 +1,358 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 62.5%;
+}
+
+
+
+body {
+  
+  font-family: 'Roboto Mono', sans-serif;
+  color: #252525;
+  font-weight: 400;
+  background-color: #FFE6F0;
+  border-bottom: 1.6rem solid #FF66B2;
+  min-height: 100vh;
+  padding: 3.2rem;
+  padding-bottom: 6rem;
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4.8rem;
+}
+
+/* *************** */
+
+.header {
+  align-self: stretch;
+}
+
+.header h1 {
+  /* Non-accessible color */
+  color: #FF66B2;
+  /* color: #af8602; */
+
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 5.2rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+.header h1::before,
+.header h1::after {
+  display: block;
+  content: '';
+  height: 3px;
+  width: 12rem;
+  background-color: #FF66B2;
+  position: absolute;
+  top: calc(50% - 1px);
+}
+
+.header h1::before {
+  left: 0;
+}
+
+.header h1::after {
+  right: 0;
+}
+
+/* *************** */
+
+
+.aboutus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  
+}
+
+.aboutus h2 {
+  display: inline-block;
+  padding: 1rem 0;
+  border-top: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 500;
+  margin-top:50px
+ 
+}
+.aboutus img{
+  width:250px;
+  margin-right:900px
+}
+
+
+.about-img{
+  width:290px;
+  margin-left:100px
+}
+.about1-img{
+  width:290px;
+  margin-left:5px
+}
+.jiayiname{
+ padding-left: 100px;
+ color:#FF66B2
+
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  margin-top:100px
+}
+
+.menu h2 {
+  display: inline-block;
+  padding: 1rem 0;
+  border-top: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 500;
+  margin-top:50px
+ 
+}
+/* Title text */
+.feature{
+  text-align: center;
+ 
+}
+.feature h2{
+  margin-bottom:50px
+}
+
+/* Individual feature card */
+.feature-card {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  background: #ffffff;
+  border: 2px solid #ffe3f2; /* soft pink accent border */
+  border-radius: 20px;
+  padding: 20px 35px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  max-width: 650px;
+  margin: 10px auto;
+  
+}
+
+/* Hover effect for interactivity */
+.feature-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow: 0 12px 30px rgba(255, 105, 180, 0.25);
+}
+.featurename {
+  font-size: 3rem;
+  
+  color: #ff4fa3; /* strong pink heading */
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  font-family: 'Press Start 2P', cursive;
+  text-shadow: 0 0 4px rgba(255, 79, 163, 0.3);
+}
+
+/* Description text */
+.featuredescription {
+  font-size: 1.5rem;
+  color: #555;
+  line-height: 1.7;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.2px;
+}
+
+/* Decorative divider (optional aesthetic) */
+.feature::after {
+  content: "";
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ffb6d9, transparent);
+  margin-top: 2rem;
+  border-radius: 2px;
+}
+
+/* Responsive layout for small screens */
+@media (max-width: 600px) {
+  .feature-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+
+  .featurename {
+    font-size: 1.2rem;
+  }
+
+  .featuredescription {
+    font-size: 0.9rem;
+  }
+}
+
+
+.feature h2 {
+  display: inline-block;
+  padding: 1rem 0;
+  border-top: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 500;
+  margin-top:40px
+ 
+}
+
+.menu > p {
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 1.6;
+  width: 80%;
+}
+
+.pizzas {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4.8rem;
+}
+.jiayipizza p{
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4.8rem;
+  margin-bottom:900px;
+}
+.name h1{
+  font-size: 18px;
+  margin-left:40px
+
+}
+.Jiayidescription {
+  display: flex;
+  gap: 3.2rem;
+  margin-left:500px;
+  margin-top:-450px;
+  font-size: 18px;
+  white-space: pre-line;
+  
+}
+
+
+
+
+.pizza {
+  display: flex;
+  gap: 3.2rem;
+}
+
+.pizza img {
+  width: 12rem;
+  aspect-ratio: 1;
+  align-self: start;
+}
+
+.pizza div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 0.4rem 0;
+}
+
+.pizza h3 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.pizza p {
+  font-size: 1.4rem;
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: auto;
+}
+
+.pizza span {
+  display: block;
+  font-size: 1.6rem;
+}
+
+.pizza.sold-out {
+  color: #888;
+}
+
+.pizza.sold-out img {
+  filter: grayscale();
+  opacity: 0.8;
+}
+
+/* *************** */
+
+.footer {
+  font-size: 1.4rem;
+}
+
+.order {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.btn {
+  color: inherit;
+  font-family: inherit;
+  border: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+  background-color: #FF99CC;
+  padding: 1.4rem 3.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top:10px
+}
+.btn1 {
+  position: absolute;        /* allows you to pin it anywhere */
+  top: 20px;                 /* distance from the top */
+  right: 20px;               /* distance from the right */
+  color: inherit;
+  font-family: inherit;
+  border: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+  background-color: #FF99CC;
+  padding: 1.4rem 3.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: #FF66B2;
+}
+
+Footer{
+    text-align:center
 }
