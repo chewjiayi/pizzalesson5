@@ -1,4 +1,3 @@
-
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css"
@@ -71,19 +70,22 @@ function App() {// App is the parent component and MyComponent is the child comp
   const about = aboutus.map(aboutuss => <Aboutuspage name={aboutuss.name} description={aboutuss.description} image={aboutuss.image} />)
   const listfood = pizzas.map(pizza => <Pizza  description={pizza.description} price={pizza.price} image={pizza.image} />)
   const featureonhomepage = feature.map(feature1 => <Features name={feature1.name} description={feature1.description } image={feature1.image}/>)
-  
+
   return (
     <div id="container">
       <div className="fullscreen-bg">
       <Header />
-       <Loginbutton />
+      <Loginbutton />
+      <Menu />
+      <p className="pizzas">{listfood}</p>
       <Aboutus />
       <p>{about}</p>
       <Feature />
       <p className="pizzas">{featureonhomepage}</p>
-      <Menu />
-      <p className="pizzas">{listfood}</p>
-      <Footer style="font-weight:bold,text-align:center" />
+      {/* <Menu />
+      <p className="pizzas">{listfood}</p> */}
+      {/* style must be an object */}
+      <Footer style={{ fontWeight: "bold", textAlign: "center" }}/>
       
       </div>
   
@@ -101,22 +103,22 @@ function Loginbutton(){
   
 }
 
-function Login() {
-  return (
-    <div>
-      <h2>Login Page</h2>
-      <input type="text" placeholder="Username" />
-      <input type="password" placeholder="Password" />
-      <button>Submit</button>
-    </div>
-  );
-}
+// function Login() {
+//   return (
+//     <div>
+//       <h2>Login Page</h2>
+//       <input type="text" placeholder="Username" />
+//       <input type="password" placeholder="Password" />
+//       <button>Submit</button>
+//     </div>
+//   );
+// }
 function Aboutus() {
   return (
     <div className="aboutus">
       <h2>About Us</h2>
 
-      <about />
+      {/* <about /> */}
     </div>
   )
 }
@@ -125,7 +127,7 @@ function Feature(){
   return(
     <div className ="feature">
       <h2>Feature</h2>
-      <features />
+      {/* <features /> */}
       
     </div>
   )
@@ -221,7 +223,7 @@ function Features(props){
 //   )
 // }
 
-function Footer() {
+function Footer(props) {  // accept props so style works
   const hour = new Date().getHours();
   const openHour = 10;
   const closeHour = 22;
@@ -229,7 +231,7 @@ function Footer() {
   const isOpen = hour > openHour && hour < closeHour;
 
   return (
-    <footer className="footer">
+    <footer className="footer" style={props.style}>
       {isOpen ? (
         <div>
           <Open />
@@ -260,6 +262,3 @@ function Closed() {
 
 const root = ReactDOM.createRoot(document.getElementById("root")); //html file in public ,root is in the div code
 root.render(<App />)
-
-
-
